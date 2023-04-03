@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tarjeta {
+    margin-top: 10rem;
+}
+
+.mrg {
+    margin-top: 12px;
+}
+
+.flex {
+    display: flex;
+    margin-top: 40px;
+}
+
+.productos {
+    margin-top: 11rem;
+}
+
+.sidebar {
+    margin: 0;
+    width: 14rem;
+    height: calc(100vh - 9vh);
+
+    ul {
+
+        list-style: none;
+        padding: 2rem 3rem;
+
+        li {
+            margin-bottom: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.content {
+    width: 100%;
+}
