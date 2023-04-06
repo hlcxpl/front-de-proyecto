@@ -36,7 +36,7 @@ const ProductsProvider = ({ children }) => {
   });
   //async function to call the api and get the array data
   const apiProductos = async () => {
-    const endpoint = "http://localhost:3000/productos";
+    const endpoint = `http://${process.env.REACT_APP_API_URL}/productos`;
     const resp = await fetch(endpoint);
     const data = await resp.json();
     setProductos(data);
@@ -45,7 +45,7 @@ const ProductsProvider = ({ children }) => {
   const handleSumitRegistrar = async (event) => {
     event.preventDefault();
     try {
-      await fetch("http://localhost:3000/registrar", {
+      await fetch(`http://${process.env.REACT_APP_API_URL}/registrar`, {
         method: "POST",
         body: JSON.stringify(usuario),
         headers: {
@@ -60,7 +60,7 @@ const ProductsProvider = ({ children }) => {
 
   const handleSumitAgregarProducto = async (event) => {
     event.preventDefault();
-    await fetch("http://localhost:3000/admin/agregar_producto", {
+    await fetch(`http://${process.env.REACT_APP_API_URL}/admin/agregar_producto`, {
       method: "POST",
       body: JSON.stringify(productoNuevo),
       headers: {
@@ -72,7 +72,7 @@ const ProductsProvider = ({ children }) => {
   const handleSumitLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch(`http://${process.env.REACT_APP_API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials),
@@ -100,7 +100,7 @@ const ProductsProvider = ({ children }) => {
   // };
 
   const apiUser = async () => {
-    const endpoint = "http://localhost:3000/usuario";
+    const endpoint = `http://${process.env.REACT_APP_API_URL}/usuario`;
     const token = localStorage.getItem("token");
     console.log(token);
     console.log(localStorage);
@@ -121,7 +121,7 @@ const ProductsProvider = ({ children }) => {
     }
   };
   const handleSumitUserUpdate = async () => {
-    const url = "http://localhost:3000/usuario/editar_info/:id";
+    const url = `http://${process.env.REACT_APP_API_URL}/usuario/editar_info/:id`;
     const options = {
       method: "PUT",
       body: JSON.stringify(user),
