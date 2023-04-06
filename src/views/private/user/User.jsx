@@ -34,7 +34,7 @@ const Usuario = () => {
                         </tbody>
                     </Table>)}
                 <Routes>
-                    <Route path={`/editar_info/:${user.id}`} element={<EditarInfo />} />
+                    <Route path={`/editar_info/${user.id}`} element={<EditarInfo />} />
                     <Route path="/pedidos" element={<MisPedidos />} />
                 </Routes>
             </div>

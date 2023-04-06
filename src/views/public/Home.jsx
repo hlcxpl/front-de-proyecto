@@ -11,7 +11,7 @@ const Home = () => {
 
     return (
         <Container fluid>
-            <Row>
+            <Row className='row-home'>
                 {products.map(
                     (producto, i) => {
                         return (

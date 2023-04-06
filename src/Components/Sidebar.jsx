@@ -8,7 +8,7 @@ const Sidebar = () => {
     <Container className='text-light bg-dark sidebar pt-5'>
       <ul>
         <li>
-          <NavLink to={`/usuario/editar_info/:${user.id}`} className="decoration-none text-light">
+          <NavLink to={`/usuario/editar_info/${user.id}`} className="decoration-none text-light">
             Cuenta
           </NavLink>
         </li>
