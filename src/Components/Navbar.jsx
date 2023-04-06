@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap'
 import ProductsContext from '../ProductsContext';
 import React, { useContext, useEffect } from 'react'
 import { VscAccount } from "react-icons/vsc";
-import Badge, { BadgeProps } from '@mui/material/Badge';
+import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
