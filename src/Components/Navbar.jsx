@@ -11,7 +11,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 import green from '@mui/material/colors/green';
 
-const  StyledBadge = styled(BadgeM)(({ theme }) => ({
+const  StyledBadge = styled(BadgeM)<BadgeProps>(({ theme }) => ({
     '& .MuiBadge-badge': {
       right: -3,
       top: 0,
@@ -21,7 +21,7 @@ const  StyledBadge = styled(BadgeM)(({ theme }) => ({
   }));
 
 
-const StyledBadgePeso = styled(BadgeM)(({ theme }) => ({
+const StyledBadgePeso = styled(BadgeM)<BadgeProps>(({ theme }) => ({
     badge: {
         right: -17,
         top: 5,
