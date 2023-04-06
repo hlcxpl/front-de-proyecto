@@ -36,7 +36,7 @@ const ProductsProvider = ({ children }) => {
   });
   //async function to call the api and get the array data
   const apiProductos = async () => {
-    const endpoint = `http://${process.env.REACT_APP_API_URL}/productos`;
+    const endpoint = `https://${process.env.REACT_APP_API_URL}/productos`;
     const resp = await fetch(endpoint);
     const data = await resp.json();
     setProductos(data);
