@@ -1,17 +1,17 @@
 
 import { NavLink } from 'react-router-dom'
-import { Navbar, Container, Nav} from 'react-bootstrap'
+import { Navbar, Container, Nav } from 'react-bootstrap'
 import ProductsContext from '../ProductsContext';
 import React, { useContext, useEffect } from 'react'
 import { VscAccount } from "react-icons/vsc";
-import BadgeM, { BadgeProps } from "@mui/material/Badge";
-import { styled } from "@mui/material/styles";
-import IconButton from "@mui/material/IconButton";
+import Badge, { BadgeProps } from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 import green from '@mui/material/colors/green';
 
-const  StyledBadge = styled(BadgeM)<BadgeProps>(({ theme }) => ({
+const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       right: -3,
       top: 0,
@@ -19,9 +19,11 @@ const  StyledBadge = styled(BadgeM)<BadgeProps>(({ theme }) => ({
       padding: '0 4px',
     },
   }));
+  
 
 
-const StyledBadgePeso = styled(BadgeM)<BadgeProps>(({ theme }) => ({
+
+const StyledBadgePeso = styled(Badge)(({ theme }) => ({
     badge: {
         right: -17,
         top: 5,
@@ -47,22 +49,22 @@ const Navigation = () => {
 
                     <Nav className="pt-3">
                         <NavLink to="/login">
-                            <VscAccount className="text-light mrg fs-4"  />
+                            <VscAccount className="text-light mrg fs-4" />
                         </NavLink>
 
                         <NavLink className='justify-content-end mx-3 text-decoration-none text-light' to="/carrito">
                             <IconButton arl="cart" className='text-light'>
-                                <StyledBadge badgeContent={items} color="secondary"  anchorOrigin={{
+                                <StyledBadge badgeContent={items} color="secondary" anchorOrigin={{
                                     vertical: 'top',
                                     horizontal: 'right',
                                 }} overlap='rectangular'>
                                     <ShoppingCartIcon />
                                 </StyledBadge>
                             </IconButton>
-                            <StyledBadgePeso badgeContent={total} style={{color: green[500]}} max={9999999} anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }} className=" mx-3 " overlap='rectangular'><MonetizationOnOutlinedIcon className='mx-1' /></StyledBadgePeso>
+                            <StyledBadgePeso badgeContent={total} style={{ color: green[500] }} max={9999999} anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }} className=" mx-3 " overlap='rectangular'><MonetizationOnOutlinedIcon className='mx-1' /></StyledBadgePeso>
                         </NavLink>
                     </Nav>
                 </Container>
