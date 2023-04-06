@@ -5,7 +5,7 @@ import ProductsContext from '../ProductsContext';
 import React, { useContext, useEffect } from 'react'
 import { VscAccount } from "react-icons/vsc";
 import BadgeM from "@mui/material/Badge";
-import { withStyles } from "@mui/material/styles";
+import { withStyles } from "@mui/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
