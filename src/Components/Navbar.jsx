@@ -7,8 +7,8 @@ import { VscAccount } from "react-icons/vsc";
 import BadgeM from "@mui/material/Badge";
 import { withStyles } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
+import ShoppingCartIcon from '@mui/material/ShoppingCart';
+import MonetizationOnOutlinedIcon from '@mui/material/MonetizationOnOutlined';
 import green from '@mui/material/colors/green';
 
 const StyledBadge = withStyles((theme) => ({
