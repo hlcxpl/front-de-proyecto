@@ -4,12 +4,12 @@ import { Navbar, Container, Nav} from 'react-bootstrap'
 import ProductsContext from '../ProductsContext';
 import React, { useContext, useEffect } from 'react'
 import { VscAccount } from "react-icons/vsc";
-import BadgeM from "'@mui/material/Badge";
-import { withStyles } from "@material-ui/core/styles";
-import IconButton from "@material-ui/core/IconButton";
+import BadgeM from "@mui/material/Badge";
+import { withStyles } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
-import green from '@material-ui/core/colors/green';
+import green from '@mui/material/colors/green';
 
 const StyledBadge = withStyles((theme) => ({
     badge: {
