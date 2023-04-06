@@ -4,30 +4,31 @@ import { Navbar, Container, Nav} from 'react-bootstrap'
 import ProductsContext from '../ProductsContext';
 import React, { useContext, useEffect } from 'react'
 import { VscAccount } from "react-icons/vsc";
-import BadgeM from "@mui/material/Badge";
-import { withStyles } from "@mui/material/styles";
+import BadgeM, { BadgeProps } from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 import green from '@mui/material/colors/green';
 
-const StyledBadge = withStyles((theme) => ({
-    badge: {
-        right: -3,
-        top: 0,
-        border: `2px solid ${theme.palette.background.paper}`,
-        padding: "0 4px"
+const StyledBadge = styled(BadgeM)<BadgeProps>(({ theme }) => ({
+    '& .MuiBadge-badge': {
+      right: -3,
+      top: 0,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: '0 4px',
     },
-}))(BadgeM);
+  }));
 
-const StyledBadgePeso = withStyles((theme) => ({
+
+const StyledBadgePeso = styled(BadgeM)<BadgeProps>(({ theme }) => ({
     badge: {
         right: -17,
         top: 5,
         border: `2px solid ${green[500]}`,
         padding: "0 4px"
     },
-}))(BadgeM);
+}));
 
 const Navigation = () => {
     const { items, setitems, cart, total, settotal } = useContext(ProductsContext)
