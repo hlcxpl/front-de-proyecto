@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import ProductsContext from '../../../ProductsContext'
 
 const EditarInfo = () => {
   const { user, setuser, handleSumitUserUpdate } = useContext(ProductsContext)
-  const navigate = useNavigate();
+  
 
   const valueToState = ({ name, value }) => {
     setuser({ ...user, [name]: value });
