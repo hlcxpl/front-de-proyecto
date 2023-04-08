@@ -87,9 +87,11 @@ const ProductsProvider = ({ children }) => {
           body: JSON.stringify(credentials),
         }
       );
-      const data = await response.text();
+      const data = await response.json();
       if (data) {
-        const some = await apiUser(data);
+        console.log(data);
+        alert(data.message);
+        const some = await apiUser(data.token);
         if (some) {
           setuser({ ...some });
           console.log(user);
