@@ -89,7 +89,6 @@ const ProductsProvider = ({ children }) => {
       );
       const data = await response.json();
       if (data) {
-        console.log(data);
         alert(data.message);
         const some = await apiUser(data.token);
         if (some) {
