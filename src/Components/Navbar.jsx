@@ -28,7 +28,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const StyledBadgePeso = styled(Badge)(({ theme }) => ({
     badge: {
         right: -17,
-        top: 9,
+        top: 5,
         border: `2px solid ${green[500]}`,
         padding: "0 4px"
     },
@@ -79,7 +79,7 @@ const Navigation = () => {
 
                             </IconButton>
 
-                            <StyledBadgePeso badgeContent={total} style={{ color: green[500] }} max={9999999} anchorOrigin={{
+                            <StyledBadgePeso badgeContent={total} style={{ color: green[700] }} max={9999999} anchorOrigin={{
                                 vertical: 'top',
                                 horizontal: 'right',
                             }} className=" mx-3 " overlap='rectangular'>
