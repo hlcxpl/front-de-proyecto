@@ -19,7 +19,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       right: -3,
       top: 0,
-      border: `2px solid ${theme.palette.background.paper}`,
+      border: `2px solid ${red[700]}`,
       padding: '0 4px',
     },
   }));
