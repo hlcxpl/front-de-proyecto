@@ -48,9 +48,9 @@ const Navigation = () => {
         <Container fluid className='header bg-transparent' xs={12} sm={4}>
             <Navbar className='fixed-top bg-dark bg-gradient' bg="dark" variant="dark">
                 <Container fluid>
-                    <NavLink className='d-flex justify-content-start' to='/'><img src='https://www.casajerusalen.cl/wp-content/uploads/—Pngtree—online-shopping-logo-desing_8918925.png' alt='mamamia-brand' width='150rem' /></NavLink>
+                    <NavLink className='d-flex justify-content-start' to='/'><img src='https://www.casajerusalen.cl/wp-content/uploads/—Pngtree—online-shopping-logo-desing_8918925.png' alt='navbar-brand' width='90rem' /></NavLink>
 
-                    <Nav className="pt-5 ">
+                    <Nav className="pt-1 ">
                         <NavLink to="/login">
                             <VscAccount className="text-light mrg fs-4" />
                         </NavLink>

@@ -44,23 +44,23 @@ const ProductsProvider = ({ children }) => {
 
   const handleSumitRegistrar = async (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch(
-        `https://${process.env.REACT_APP_API_URL}/registrar`,
-        {
-          method: "POST",
-          body: JSON.stringify(usuario),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      alert(response);
-    } catch (error) {
-      console.error(error);
-    }
+    const endpoint = `https://${process.env.REACT_APP_API_URL}/registrar`;
+
+    const options = {
+
+      method: "POST",
+      body: JSON.stringify(usuario),
+      headers: { "Content-Type": "application/json",},
+
+    };
+
+    await fetch(endpoint, options)
+      .then((response) => response.json())
+      .then((data) => alert(data.message))
+      .catch((error) => console.error(error));
     setShouldNavigate(true);
   };
+
 
   const handleSumitAgregarProducto = async (event) => {
     event.preventDefault();
@@ -89,7 +89,6 @@ const ProductsProvider = ({ children }) => {
       );
       const data = await response.text();
       if (data) {
-        
         const some = await apiUser(data);
         if (some) {
           setuser({ ...some });
@@ -127,9 +126,9 @@ const ProductsProvider = ({ children }) => {
     // }
   };
 
-
   const handleSumitUserUpdate = async () => {
-    const url = `https://${process.env.REACT_APP_API_URL}/usuario/editar_info/:id`;
+    const endpoint = `https://${process.env.REACT_APP_API_URL}/usuario/editar_info/:id`;
+    console.log(user.id);
     const options = {
       method: "PUT",
       body: JSON.stringify(user),
@@ -137,13 +136,11 @@ const ProductsProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
     };
-    await fetch(url, options)
+    await fetch(endpoint, options)
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
   };
-
-
 
   // use effect to call the api
   useEffect(() => {
