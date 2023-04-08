@@ -10,6 +10,10 @@ import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 import green from '@mui/material/colors/green';
+import { red } from '@mui/material/colors';
+
+const color = red[700];
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -26,7 +30,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const StyledBadgePeso = styled(Badge)(({ theme }) => ({
     badge: {
         right: -17,
-        top: 5,
+        top: 0,
         border: `2px solid ${green[500]}`,
         padding: "0 4px"
     },
@@ -54,7 +58,7 @@ const Navigation = () => {
 
                         <NavLink className='justify-content-end mx-3 text-decoration-none text-light' to="/carrito">
                             <IconButton arl="cart" className='text-light'>
-                                <StyledBadge badgeContent={items} color="secondary" anchorOrigin={{
+                                <StyledBadge badgeContent={items} color={red[700]} anchorOrigin={{
                                     vertical: 'top',
                                     horizontal: 'right',
                                 }} overlap='rectangular'>
