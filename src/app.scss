@@ -13,7 +13,7 @@
 
 .pad {
     padding-top: 9rem;
-   
+
 }
 
 .flex {
@@ -53,3 +53,26 @@
     margin-top: 0;
     margin-bottom: 0;
 }
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+    transition: all 0,5s ease-in-out;
+  }
+  
+  .card-text.show-full-text {
+    -webkit-line-clamp: unset;
+    height: auto;
+  }
+
+  .text-turquoise {
+    color: turquoise;
+  }
+  
+  .text-fucsia {
+    color: fuchsia;
+  }
