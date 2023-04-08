@@ -78,14 +78,12 @@ const ProductsProvider = ({ children }) => {
         body: JSON.stringify(credentials),
       });
       const data = await response.text();
-      console.log(data);
       if (data) {
         localStorage.setItem("token", data);
-        console.log(data);
         await apiUser();
         const user = localStorage.getItem("user");
         console.log(user);
-        setShouldNavigate(user?.length > 0);
+        setShouldNavigate(user?.length === 0);
       }
     } catch (error) {
       console.log(error);
