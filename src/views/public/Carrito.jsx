@@ -14,7 +14,7 @@ function Carrito() {
 
     return (
         <>
-            <ListGroup variant='flush' className='mt-5'>
+            <ListGroup variant='flush' className='pad'>
                 {cart.map((producto, i) => (
                     <ListGroup.Item className='rounded text-capitalize bg-dark text-light m-1 shadow d-flex justify-content-between py-2' key={i}>
                         <img src={producto.img_url} style={{ width: 50 }} alt='' />
