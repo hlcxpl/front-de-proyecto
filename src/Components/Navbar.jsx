@@ -19,7 +19,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: -3,
         top: 0,
-        border: `2px solid ${red[700]}`,
+        border: `2px solid ${theme.palette.background.paper}`,
         padding: '0 4px',
     },
 }));
@@ -55,10 +55,10 @@ const Navigation = () => {
                 <Container fluid>
 
                     <NavLink className='d-flex justify-content-start' to='/'>
-
+                        
                         <img src='https://www.casajerusalen.cl/wp-content/uploads/—Pngtree—online-shopping-logo-desing_8918925.png' alt='mamamia-brand' width='150rem' />
-
-                    </NavLink>
+                        
+                        </NavLink>
 
                     <Nav className="pt-3">
 
