@@ -16,7 +16,7 @@ const EditarInfo = () => {
   
   console.log(user)
   return (
-    <>
+    <Container fluid className='pad'>
       <h1 className=' text-center text-dark '>Información de usuario</h1>
       <Container className="pt-5" fluid="sm">
 
@@ -70,7 +70,7 @@ const EditarInfo = () => {
           </Button>
         </Form>
       </Container>
-    </>
+    </Container>
   )
 }
 

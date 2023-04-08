@@ -45,13 +45,17 @@ const ProductsProvider = ({ children }) => {
   const handleSumitRegistrar = async (event) => {
     event.preventDefault();
     try {
-      await fetch(`https://${process.env.REACT_APP_API_URL}/registrar`, {
-        method: "POST",
-        body: JSON.stringify(usuario),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://${process.env.REACT_APP_API_URL}/registrar`,
+        {
+          method: "POST",
+          body: JSON.stringify(usuario),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      alert(response);
     } catch (error) {
       console.error(error);
     }
@@ -60,30 +64,38 @@ const ProductsProvider = ({ children }) => {
 
   const handleSumitAgregarProducto = async (event) => {
     event.preventDefault();
-    await fetch(`https://${process.env.REACT_APP_API_URL}/admin/agregar_producto`, {
-      method: "POST",
-      body: JSON.stringify(productoNuevo),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    await fetch(
+      `https://${process.env.REACT_APP_API_URL}/admin/agregar_producto`,
+      {
+        method: "POST",
+        body: JSON.stringify(productoNuevo),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
 
   const handleSumitLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`https://${process.env.REACT_APP_API_URL}/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(credentials),
-      });
+      const response = await fetch(
+        `https://${process.env.REACT_APP_API_URL}/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(credentials),
+        }
+      );
       const data = await response.text();
       if (data) {
-        localStorage.setItem("token", data);
-        await apiUser();
-        const user = localStorage.getItem("user");
-        console.log(user);
-        setShouldNavigate(user?.length === 0);
+        
+        const some = await apiUser(data);
+        if (some) {
+          setuser({ ...some });
+          console.log(user);
+          setShouldNavigate2(true);
+        }
       }
     } catch (error) {
       console.log(error);
@@ -97,9 +109,8 @@ const ProductsProvider = ({ children }) => {
   //   setPedidos(data);
   // };
 
-  const apiUser = async () => {
+  const apiUser = async (token) => {
     const endpoint = `https://${process.env.REACT_APP_API_URL}/usuario`;
-    const token = localStorage.getItem("token");
     console.log(token);
     console.log(localStorage);
     const headers = {
@@ -109,15 +120,14 @@ const ProductsProvider = ({ children }) => {
     console.log(headers);
     const resp = await fetch(endpoint, { headers });
     const data = await resp.json();
-    localStorage.removeItem("token");
     console.log(data);
-    setuser({ ...data });
-    console.log(user);
-
-    if (user && Object.keys(user).length > 0) {
-      setShouldNavigate2(true);
-    }
+    return data;
+    // if (user && Object.keys(user).length > 0) {
+    //   setShouldNavigate2(true);
+    // }
   };
+
+
   const handleSumitUserUpdate = async () => {
     const url = `https://${process.env.REACT_APP_API_URL}/usuario/editar_info/:id`;
     const options = {
@@ -132,6 +142,9 @@ const ProductsProvider = ({ children }) => {
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
   };
+
+
+
   // use effect to call the api
   useEffect(() => {
     apiProductos();
