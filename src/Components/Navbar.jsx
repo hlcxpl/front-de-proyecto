@@ -9,28 +9,26 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
-import green from '@mui/material/colors/green';
+import { green } from '@mui/material/colors';
 import { red } from '@mui/material/colors';
 
-const color = red[700];
+
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-      right: -3,
-      top: 0,
-      border: `2px solid ${red[700]}`,
-      padding: '0 4px',
+        right: -3,
+        top: 0,
+        border: `2px solid ${red[700]}`,
+        padding: '0 4px',
     },
-  }));
-  
-
+}));
 
 
 const StyledBadgePeso = styled(Badge)(({ theme }) => ({
     badge: {
         right: -17,
-        top: 0,
+        top: 9,
         border: `2px solid ${green[500]}`,
         padding: "0 4px"
     },
