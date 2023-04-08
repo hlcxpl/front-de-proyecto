@@ -17,7 +17,7 @@ const Home = () => {
                         return (
                             <Col xs={12} sm={3} className="productos" key={producto.id}>
                                 <Card className='text-center m-2 bg-dark text-light p-2 rounded shadow' key={producto.id} >
-                                    <Card.Img variant="top" src={producto.img_url} width={500} height={500}/>
+                                    <Card.Img variant="top" src={producto.img_url} width={400} height={350}/>
                                     <Card.Body>
                                         <Card.Title key={producto.precio}>{producto.nombre.toUpperCase()}</Card.Title>
                                         <Card.Text key={producto.precio_oferta}>
