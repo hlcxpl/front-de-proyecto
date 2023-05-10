@@ -130,6 +130,7 @@ const ProductsProvider = ({ children }) => {
   const handleSumitUserUpdate = async () => {
     const endpoint = `https://${process.env.REACT_APP_API_URL}/usuario/editar_info/:id`;
     console.log(user.id);
+    console.log(user);
     const options = {
       method: "PUT",
       body: JSON.stringify(user),

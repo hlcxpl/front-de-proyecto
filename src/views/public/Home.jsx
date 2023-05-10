@@ -76,15 +76,15 @@ const Home = () => {
                 {products.map((producto, i) => {
                     const description = producto.descripcion.toUpperCase();
                     const maxChars = 50;
-                    const showFullTextForThisProduct = showFullText[producto.id];
+                    const a = showFullText[producto.id];
                     const shouldShowMoreButton = description.length > maxChars;
-                    const shouldShowLessButton = showFullTextForThisProduct && shouldShowMoreButton;
-                    const textToShow = showFullTextForThisProduct
+                    const shouldShowLessButton = a && shouldShowMoreButton;
+                    const textToShow = a
                         ? `${description} ${shouldShowLessButton ? "(ver menos)" : ""}`
                         : shouldShowMoreButton
                             ? `${description.slice(0, maxChars)}... (ver más)`
                             : description;
-                    const textClassName = showFullTextForThisProduct
+                    const textClassName = a
                         ? "text-fucsia show-full-text"
                         : "text-turquoise";
                     return (
